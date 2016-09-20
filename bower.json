@@ -1,0 +1,33 @@
+{
+  "name": "Flashlight",
+  "description": "A search engine",
+  "main": "server.js",
+  "authors": [
+    "Miguel Ehrstrand"
+  ],
+  "license": "ISC",
+  "moduleType": [
+    "node"
+  ],
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/vendor",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.3",
+    "toastr": "^2.1.2",
+    "angular": "^1.5.4",
+    "angular-resource": "^1.5.3",
+    "angular-route": "^1.5.3",
+    "normalize-css": "^4.2.0"
+  },
+  "resolutions": {
+    "angular": "1.5.3"
+  }
+}

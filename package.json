@@ -1,0 +1,23 @@
+{
+  "name": "Flashlight",
+  "version": "1.0.0",
+  "description": "A search engine",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "4.4.x",
+    "npm": "2.15.x"
+  },
+  "author": "Miguel Ehrstrand",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.13.4",
+    "jade": "^1.11.0",
+    "morgan": "^1.7.0",
+    "stylus": "^0.54.2"
+  }
+}

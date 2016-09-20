@@ -1,0 +1,42 @@
+search-field > div {
+  background-color: #e6e6e6;
+  height: 55px;
+  border-bottom: 1px solid #000;
+}
+search-field center {
+  padding-top: 8px;
+}
+search-field center > .container {
+  width: 653px;
+}
+search-field center > .container > input {
+  height: 29px;
+  width: 550px;
+  border: 1px solid #000;
+  border-top-left-radius: 19px;
+  border-bottom-left-radius: 19px;
+  background: url("/images/MrMagnifier.png") no-repeat;
+  background-color: #fff;
+  padding-top: 10px;
+  padding-left: 45px;
+  float: left;
+}
+search-field center > .container > .searchButton {
+  height: 30px;
+  width: 45px;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-top-right-radius: 19px;
+  border-bottom-right-radius: 19px;
+  float: right;
+  font-size: 140%;
+  padding-top: 10px;
+  padding-right: 5px;
+  cursor: pointer;
+}
+search-field center > .container > .searchButton:hover {
+  background-color: #82ff84;
+}
+search-field center > .container > .searchButton:active {
+  background-color: #008000;
+}
