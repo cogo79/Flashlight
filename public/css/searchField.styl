@@ -1,3 +1,5 @@
+SMALL_WIDTH_BREAKPOINT = 680px
+
 search-field > div
 	background-color #E6E6E6
 	height 55px
@@ -7,11 +9,21 @@ search-field center
 	padding-top 8px
 
 search-field center > .container
+	box-sizing: border-box
+	overflow hidden
 	width 653px
+	padding-right 55px
+	height 47px
+	position relative
+	@media(max-width SMALL_WIDTH_BREAKPOINT)
+		width 100%
+		padding-right 60px
+		padding-left 5px
 
 search-field center > .container > input
-	height 29px
-	width 550px
+	box-sizing: border-box
+	height 42px
+	width 100%
 	border 1px solid black
 	border-top-left-radius 19px
 	border-bottom-left-radius 19px
@@ -19,9 +31,13 @@ search-field center > .container > input
 	background-color white
 	padding-top 10px
 	padding-left 45px
-	float left
+	@media(max-width SMALL_WIDTH_BREAKPOINT)
+		padding-right 50px
 
 search-field center > .container > .searchButton
+	position absolute
+	top 0px
+	right 0px
 	height 30px
 	width 45px
 	background-color white
@@ -33,6 +49,8 @@ search-field center > .container > .searchButton
 	padding-top 10px
 	padding-right 5px
 	cursor pointer
+	@media(max-width SMALL_WIDTH_BREAKPOINT)
+		right 5px
 
 search-field center > .container > .searchButton:hover
 	background-color #82FF84
