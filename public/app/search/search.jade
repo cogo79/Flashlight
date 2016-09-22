@@ -1,5 +1,7 @@
 div(ng-controller="mvSearchCtrl")
 	search-field
 
-.searchResults
-	img(src="images/search-005.jpg")
+	.searchResults
+		div(ng-repeat="page in pages")
+			img(ng-repeat="image in page" src="{{image.url}}")
+		img(src="images/search-005.jpg")
