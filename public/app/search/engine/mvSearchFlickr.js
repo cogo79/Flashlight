@@ -15,12 +15,12 @@ angular.module('app').factory('mvSearchFlickr', ['$http', '$q', function mvSearc
 		return o;
 	};
 	return {
-		searchFor: function(word) {
+		newSearch: function(word) {
 			var dfd = $q.defer();
 			var searchResults = [];
 			$http({
 				method: 'GET',
-				url: 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=14f9088eec0f71b0bebc5e4d919c36e6&format=json&per_page=30&text=' + word
+				url: 'https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=14f9088eec0f71b0bebc5e4d919c36e6&format=json&text=' + word
 			}).then(function successCallback(response) {
 				var d = response.data.replace(new RegExp(/^jsonFlickrApi\(/),'');
 				var d2 = d.replace(new RegExp(/\)$/), '');

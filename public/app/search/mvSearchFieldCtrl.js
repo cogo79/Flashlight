@@ -3,7 +3,7 @@ angular.module('app')
 	
 	$scope.search = function() {
 		console.log($scope.searchText);
-		mvSearchCoordinator.searchFor($scope.searchText);
+		mvSearchCoordinator.newSearch($scope.searchText);
 	}
 }])
 .directive('searchField', function() {

@@ -2,11 +2,13 @@
 angular.module('app').factory('mvSearchCoordinator', ['mvSearchFlickr', function(mvSearchFlickr) {
 	var pages = [];
 	return {
-		searchFor: function(word) {
-			mvSearchFlickr.searchFor(word).then(function(results) {
+		newSearch: function(word) {
+			mvSearchFlickr.newSearch(word).then(function(results) {
+				pages = [];
 				pages.push(results);
-			}, function(error) {
 				
+			}, function(error) {
+
 			});
 		},
 		searchResults: function() {
