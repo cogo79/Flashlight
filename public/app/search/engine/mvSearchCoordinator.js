@@ -7,7 +7,6 @@ angular.module('app').factory('mvSearchCoordinator', ['mvSearchFlickr', function
 			mvSearchFlickr.newSearch(word).then(function(results) {
 				pages = [];
 				pages.push(results);
-				
 			}, function(error) {
 				
 			});

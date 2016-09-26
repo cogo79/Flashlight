@@ -1,6 +1,7 @@
 .searchResults > img {
   position: fixed;
   bottom: 0px;
+  left: 0px;
   width: 100%;
   z-index: -1;
 }
@@ -9,3 +10,42 @@
     top: 0px;
   }
 }
+.searchResults img.fetchedImage {
+  margin: 4px;
+  max-height: 200px;
+  vertical-align: bottom;
+}
+/*
+.searchResults .wraper
+	height 200px
+	margin 4px
+	background-color red
+	position relative
+	display inline-block
+	float left
+*/
+/*
+div.testDiv
+	height 180px
+	width 280px
+	margin 4px
+	background-color red
+	display block
+	float left
+	vertical-align: top
+
+div.specialTestDiv
+	margin-bottom 200px
+	clear right
+
+.class4
+	clear both
+
+div.specialTestDiv > div
+	background-color green
+	height 180px
+	width 100%
+	position relative
+	left 0px
+	top 170px
+*/

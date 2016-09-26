@@ -2,6 +2,7 @@ div(ng-controller="mvSearchCtrl")
 	search-field
 
 	.searchResults(ng-controller="mvSearchResultsCtrl")
-		div(ng-repeat="page in pages()")
-			img(ng-repeat="image in page" src="{{image.url}}")
+
+		div(ng-repeat="page in pages()" class="pageIndex{{$index}}")
+			img(ng-repeat="image in page" src="{{image.url}}" ng-click="showMetaDataForImage(image, $parent.$index, $index);" class="imageIndex{{$index}} fetchedImage")
 		img(src="images/search-005.jpg")
