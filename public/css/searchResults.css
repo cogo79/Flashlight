@@ -21,7 +21,6 @@
   width: 100%;
   float: left;
   background-color: #f00;
-  z-index: 9;
 }
 .searchResults .imageMetaData > div.pointer {
   position: relative;
@@ -33,5 +32,4 @@
   -ms-transform: rotate(45deg); /* IE 9 */
   -webkit-transform: rotate(45deg); /* Safari */
   transform: rotate(45deg); /* Standard syntax */
-  z-index: 8;
 }

@@ -2,9 +2,18 @@ angular.module('app')
 .controller('mvSearchFieldCtrl', ['$scope', 'mvSearchCoordinator', function($scope, mvSearchCoordinator) {
 	
 	$scope.search = function() {
-		console.log($scope.searchText);
-		mvSearchCoordinator.newSearch($scope.searchText);
+		if ($scope.searchText) {
+			console.log($scope.searchText);
+			mvSearchCoordinator.newSearch($scope.searchText);
+			$('search-field center > .container > input').blur();
+		}
 	}
+
+	$('search-field center > .container > input').keyup(function(event){
+	    if(event.keyCode == 13){
+	        $scope.search();
+	    }
+	});
 }])
 .directive('searchField', function() {
 	return {

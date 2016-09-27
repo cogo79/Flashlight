@@ -18,7 +18,7 @@ angular.module('app').controller('mvSearchResultsCtrl', ['$scope', 'mvSearchCoor
 			$('image-meta-data').insertAfter(clickedImageSelector);
 
 			var $element = $(clickedImageSelector);
-			console.log($element);
+			//console.log($element);
 
 			$scope.clickedImage = image;
 			
