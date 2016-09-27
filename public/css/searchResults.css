@@ -14,38 +14,34 @@
   margin: 4px;
   max-height: 200px;
   vertical-align: bottom;
+  cursor: pointer;
+}
+.searchResults .imagePointer {
+  height: 300px;
+  width: 100%;
+  float: left;
+  background-color: #f00;
+}
+.searchResults .imagePointer > div {
+  position: relative;
+  bottom: 0px;
+  left: -20px;
+  background-color: #000;
+  width: 60px;
+  height: 60px;
+  -ms-transform: rotate(45deg); /* IE 9 */
+  -webkit-transform: rotate(45deg); /* Safari */
+  transform: rotate(45deg); /* Standard syntax */
 }
 /*
-.searchResults .wraper
+span.testDiv
+	margin 0px
+	margin-top 200px
 	height 200px
-	margin 4px
-	background-color red
 	position relative
-	display inline-block
-	float left
-*/
-/*
-div.testDiv
-	height 180px
-	width 280px
-	margin 4px
-	background-color red
-	display block
-	float left
-	vertical-align: top
 
-div.specialTestDiv
-	margin-bottom 200px
-	clear right
-
-.class4
-	clear both
-
-div.specialTestDiv > div
-	background-color green
-	height 180px
-	width 100%
-	position relative
-	left 0px
-	top 170px
+span.testDiv > img
+	max-height 200px
+	position absolute
+	bottom 0px
 */

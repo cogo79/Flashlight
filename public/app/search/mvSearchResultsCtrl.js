@@ -4,9 +4,13 @@ angular.module('app').controller('mvSearchResultsCtrl', ['$scope', 'mvSearchCoor
 	};
 
 	$scope.showMetaDataForImage = function(image, pageIndex, imageIndex) {
-		
-		var element = $('.searchResults .pageIndex'+pageIndex+' .imageIndex'+imageIndex+'.fetchedImage');
-		console.log(element);
+		var $selector = '.searchResults .pageIndex'+pageIndex+' .imageIndex'+imageIndex+'.fetchedImage';
+		$scope.clickedImage = $selector;
+
+		$('<div class="imagePointer"><div></div></div>').insertAfter($selector);
+
+		var $element = $($selector);
+		console.log($element);
 	}
 
 	$(window).scroll(function() {
