@@ -7,7 +7,7 @@ angular.module('app').controller('mvSearchResultsCtrl', ['$scope', 'mvSearchCoor
 		var $selector = '.searchResults .pageIndex'+pageIndex+' .imageIndex'+imageIndex+'.fetchedImage';
 		$scope.clickedImage = $selector;
 
-		$('<div class="imagePointer"><div></div></div>').insertAfter($selector);
+		$('image-meta-data').insertAfter($selector);
 
 		var $element = $($selector);
 		console.log($element);
@@ -19,4 +19,12 @@ angular.module('app').controller('mvSearchResultsCtrl', ['$scope', 'mvSearchCoor
 			mvSearchCoordinator.nextPage();
 		}
 	});
-}]);
+}]).directive('imageMetaData', function() {
+	return {
+		restrict: 'E',
+		templateUrl: '/partials/search/imageMetaData',
+		link: function(scope, element, attributes){
+			element.addClass('imageMetaData');
+		}
+	};
+});
