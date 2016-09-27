@@ -3,27 +3,34 @@ angular.module('app').controller('mvSearchResultsCtrl', ['$scope', 'mvSearchCoor
 		return mvSearchCoordinator.searchResults();	
 	};
 
-	var previousSelector;
+	var clickedImageSelector;
 	$scope.showMetaDataForImage = function(image, pageIndex, imageIndex) {
 
-		var selector = '.searchResults .pageIndex'+pageIndex+' .imageIndex'+imageIndex+'.fetchedImage';
+		var newSelector = '.searchResults .pageIndex'+pageIndex+' .imageIndex'+imageIndex+'.fetchedImage';
 
-		if (previousSelector && previousSelector === selector) {
-			previousSelector = null;
+		if (clickedImageSelector && clickedImageSelector === newSelector) {
+			clickedImageSelector = null;
 			$scope.clickedImage = null;
 		} else {
-			
-			$('image-meta-data').insertAfter(selector);
 
-			var $element = $(selector);
+			clickedImageSelector = newSelector;
+
+			$('image-meta-data').insertAfter(clickedImageSelector);
+
+			var $element = $(clickedImageSelector);
 			console.log($element);
 
 			$scope.clickedImage = image;
-			previousSelector = selector;
+			
+			adjustImagePointer();
 		}
 	};
 
-
+	function adjustImagePointer() {
+		var $element = $(clickedImageSelector);
+		var x = $element["0"].x + $element["0"].width/2 - 30;
+		$('.searchResults .imageMetaData > div.pointer').css({left:x});
+	}
 
 	$(window).scroll(function() {
 		if($(window).scrollTop() + $(window).height() == $(document).height()) {

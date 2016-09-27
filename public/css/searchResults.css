@@ -23,10 +23,9 @@
   background-color: #f00;
 }
 .searchResults .imageMetaData > div.pointer {
-  z-index: 0;
   position: relative;
   top: 0px;
-  left: 20px;
+  left: 0px;
   background-color: #000;
   width: 60px;
   height: 60px;
@@ -34,15 +33,3 @@
   -webkit-transform: rotate(45deg); /* Safari */
   transform: rotate(45deg); /* Standard syntax */
 }
-/*
-span.testDiv
-	margin 0px
-	margin-top 200px
-	height 200px
-	position relative
-
-span.testDiv > img
-	max-height 200px
-	position absolute
-	bottom 0px
-*/
