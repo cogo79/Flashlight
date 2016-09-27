@@ -1,4 +1,5 @@
 angular.module('app').controller('mvSearchResultsCtrl', ['$scope', 'mvSearchCoordinator', '$window', function($scope, mvSearchCoordinator, $window) {
+
 	$scope.pages = function() {
 		return mvSearchCoordinator.searchResults();	
 	};
@@ -9,8 +10,7 @@ angular.module('app').controller('mvSearchResultsCtrl', ['$scope', 'mvSearchCoor
 		var newSelector = '.searchResults .pageIndex'+pageIndex+' .imageIndex'+imageIndex+'.fetchedImage';
 
 		if (clickedImageSelector && clickedImageSelector === newSelector) {
-			clickedImageSelector = null;
-			$scope.clickedImage = null;
+			noImageClicked();
 		} else {
 
 			clickedImageSelector = newSelector;
@@ -26,15 +26,24 @@ angular.module('app').controller('mvSearchResultsCtrl', ['$scope', 'mvSearchCoor
 		}
 	};
 	angular.element($window).bind('resize', function(){
-		adjustImagePointer();
-		$scope.$digest();
+		if ($scope.clickedImage) {
+			adjustImagePointer();
+			$scope.$digest();
+		}
 	});
 	function adjustImagePointer() {
 		var $element = $(clickedImageSelector);
 		var x = $element["0"].x + $element["0"].width/2 - 30;
 		$('.searchResults .imageMetaData > div.pointer').css({left:x});
 	}
-
+	$scope.$on(NEW_SEARCH_SUCCEEDED_EVENT, function(event) {
+		noImageClicked();
+    });
+    function noImageClicked() {
+    	$('image-meta-data').insertAfter('.searchResults > img.backgroundImage');
+		clickedImageSelector = null;
+		$scope.clickedImage = null;
+    }
 	$(window).scroll(function() {
 		if($(window).scrollTop() + $(window).height() == $(document).height()) {
 			// User scrolled to bottom
@@ -48,20 +57,5 @@ angular.module('app').controller('mvSearchResultsCtrl', ['$scope', 'mvSearchCoor
 		link: function(scope, element, attributes) {
 			element.addClass('imageMetaData');
 		}
-		/*
-		function link(scope, element, attrs){
-
-       scope.width = $window.innerWidth;
-
-       angular.element($window).bind('resize', function(){
-
-         scope.width = $window.innerWidth;
-
-         // manuall $digest required as resize event
-         // is outside of angular
-         scope.$digest();
-       });
-
-     }*/
 	};
 }]);

@@ -1,10 +1,11 @@
 const NO_MORE_PAGES = 'NO_MORE_PAGES';
 
-angular.module('app').factory('mvSearchCoordinator', ['mvSearchFlickr', function(mvSearchFlickr) {
+angular.module('app').factory('mvSearchCoordinator', ['mvSearchFlickr', 'mvEvents', function(mvSearchFlickr, mvEvents) {
 	var pages = [];
 	return {
 		newSearch: function(word) {
 			mvSearchFlickr.newSearch(word).then(function(results) {
+				mvEvents.newSearchSucceeded();
 				pages = [];
 				pages.push(results);
 			}, function(error) {
