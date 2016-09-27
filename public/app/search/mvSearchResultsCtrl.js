@@ -3,15 +3,27 @@ angular.module('app').controller('mvSearchResultsCtrl', ['$scope', 'mvSearchCoor
 		return mvSearchCoordinator.searchResults();	
 	};
 
+	var previousSelector;
 	$scope.showMetaDataForImage = function(image, pageIndex, imageIndex) {
-		var $selector = '.searchResults .pageIndex'+pageIndex+' .imageIndex'+imageIndex+'.fetchedImage';
-		$scope.clickedImage = $selector;
 
-		$('image-meta-data').insertAfter($selector);
+		var selector = '.searchResults .pageIndex'+pageIndex+' .imageIndex'+imageIndex+'.fetchedImage';
 
-		var $element = $($selector);
-		console.log($element);
-	}
+		if (previousSelector && previousSelector === selector) {
+			previousSelector = null;
+			$scope.clickedImage = null;
+		} else {
+			
+			$('image-meta-data').insertAfter(selector);
+
+			var $element = $(selector);
+			console.log($element);
+
+			$scope.clickedImage = image;
+			previousSelector = selector;
+		}
+	};
+
+
 
 	$(window).scroll(function() {
 		if($(window).scrollTop() + $(window).height() == $(document).height()) {
