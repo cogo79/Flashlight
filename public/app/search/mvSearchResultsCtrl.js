@@ -27,7 +27,7 @@ angular.module('app').controller('mvSearchResultsCtrl', ['$scope', 'mvSearchCoor
 	};
 	angular.element($window).bind('resize', function(){
 		adjustImagePointer();
-		scope.$digest();
+		$scope.$digest();
 	});
 	function adjustImagePointer() {
 		var $element = $(clickedImageSelector);
