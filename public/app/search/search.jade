@@ -3,7 +3,7 @@ div(ng-controller="mvSearchCtrl")
 
 	.searchResults(ng-controller="mvSearchResultsCtrl")
 
-		div(ng-repeat="page in pages()" class="pageIndex{{$index}}")
+		span(ng-repeat="page in pages()" class="pageIndex{{$index}}")
 			img(ng-repeat="image in page" ng-src="{{image.url}}" ng-click="showMetaDataForImage(image, $parent.$index, $index);" class="imageIndex{{$index}} fetchedImage")
 		img.backgroundImage(src="images/search-005.jpg")
 		image-meta-data(ng-show="clickedImage")
