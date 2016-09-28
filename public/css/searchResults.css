@@ -20,16 +20,24 @@
   height: 300px;
   width: 100%;
   float: left;
-  background-color: #f00;
+  background-color: #000;
 }
 .searchResults .imageMetaData > div.pointer {
   position: relative;
-  top: 0px;
+  top: -20px;
   left: 0px;
+  width: 60px;
+  height: 20px;
+  overflow: hidden;
+}
+.searchResults .imageMetaData > div.pointer > div {
   background-color: #000;
   width: 60px;
   height: 60px;
+  border: solid #fff 2px;
   -ms-transform: rotate(45deg); /* IE 9 */
   -webkit-transform: rotate(45deg); /* Safari */
   transform: rotate(45deg); /* Standard syntax */
+  position: relative;
+  top: 14px;
 }
