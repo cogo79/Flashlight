@@ -17,7 +17,7 @@
   cursor: pointer;
 }
 .searchResults .imageMetaData {
-  height: 300px;
+  height: 400px;
   width: 100%;
   float: left;
   background-color: #000;
@@ -40,4 +40,20 @@
   transform: rotate(45deg); /* Standard syntax */
   position: relative;
   top: 14px;
+}
+.searchResults .imageMetaData > div.content {
+  color: #fff;
+  height: 400px;
+  position: relative;
+  top: -20px;
+}
+.searchResults .imageMetaData > div.content figure {
+  margin: 0px;
+  height: 386px;
+  position: absolute;
+  top: 7px;
+  left: 25px;
+}
+.searchResults .imageMetaData > div.content figure > img {
+  max-height: 386px;
 }

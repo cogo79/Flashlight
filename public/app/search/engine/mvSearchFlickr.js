@@ -1,6 +1,5 @@
 const FLICKR = "FLICKR";
 
-
 angular.module('app').factory('mvSearchFlickr', ['$http', '$q', function mvSearchFlickrNotAnAnonymousFunctionAnyMoreDa($http, $q) {
 	function jSONParse(response) {
 		var d = response.data.replace(new RegExp(/^jsonFlickrApi\(/),'');
@@ -13,11 +12,13 @@ angular.module('app').factory('mvSearchFlickr', ['$http', '$q', function mvSearc
 			from: FLICKR,
 			meta: result
 		}
-		o.url = 'https://c7.staticflickr.com/'+
+		var main ='https://c7.staticflickr.com/'+
 			result.farm+'/'+
 			result.server+'/'+
 			result.id+'_'+
-			result.secret+'_n.jpg';
+			result.secret;
+		o.url = main+'_n.jpg';
+		o.urlFullSize = main+'_b.jpg'
 		return o;
 	};
 	function formatAll(data) {
