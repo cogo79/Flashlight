@@ -73,6 +73,7 @@
   width: -webkit-calc(100% - 725px);
   width: calc(100% - 725px);
   float: right;
+  padding-left: 10px;
 }
 @media (max-width: 1120px) {
   .searchResults .imageMetaData > div.content flickr-meta-data .info {
