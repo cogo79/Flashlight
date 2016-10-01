@@ -55,8 +55,6 @@
   max-height: 406px;
   padding: 7px;
   text-align: center;
-  display: inline-block;
-  float: left;
 }
 @media (max-width: 729px) {
   .searchResults .imageMetaData > div.content flickr-meta-data .figure {
@@ -70,7 +68,14 @@
   max-width: 100%;
 }
 .searchResults .imageMetaData > div.content flickr-meta-data .info {
-  display: inline-block;
   background-color: #ff0;
   min-width: 385px;
+  float: right;
+}
+@media (max-width: 1120px) {
+  .searchResults .imageMetaData > div.content flickr-meta-data .info {
+    float: left;
+    margin-top: 406px;
+    width: 100%;
+  }
 }
