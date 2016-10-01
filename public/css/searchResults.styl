@@ -63,10 +63,11 @@
 
 .searchResults .imageMetaData > div.content flickr-meta-data .info
 	background-color yellow
-	min-width 385px
+	width: -moz-calc(100% - 725px)
+	width: -webkit-calc(100% - 725px)
+	width: calc(100% - 725px)
 	float right
 	@media(max-width 1120px)
 		float left
-		margin-top 406px
+		margin-top 420px
 		width 100%
-	
