@@ -17,7 +17,7 @@
   cursor: pointer;
 }
 .searchResults .imageMetaData {
-  height: 400px;
+  min-height: 400px;
   width: 100%;
   float: left;
   background-color: #000;
@@ -43,17 +43,34 @@
 }
 .searchResults .imageMetaData > div.content {
   color: #fff;
-  height: 400px;
+  min-height: 400px;
   position: relative;
   top: -20px;
 }
-.searchResults .imageMetaData > div.content figure {
+.searchResults .imageMetaData > div.content flickr-meta-data .figure {
   margin: 0px;
-  height: 386px;
   position: absolute;
-  top: 7px;
-  left: 25px;
+  background-color: #f00;
+  width: 700px;
+  max-height: 406px;
+  padding: 7px;
+  text-align: center;
+  display: inline-block;
+  float: left;
 }
-.searchResults .imageMetaData > div.content figure > img {
-  max-height: 386px;
+@media (max-width: 729px) {
+  .searchResults .imageMetaData > div.content flickr-meta-data .figure {
+    width: -moz-calc(100% - 14px);
+    width: -webkit-calc(100% - 14px);
+    width: calc(100% - 14px);
+  }
+}
+.searchResults .imageMetaData > div.content flickr-meta-data .figure > img {
+  max-height: 407px;
+  max-width: 100%;
+}
+.searchResults .imageMetaData > div.content flickr-meta-data .info {
+  display: inline-block;
+  background-color: #ff0;
+  min-width: 385px;
 }
