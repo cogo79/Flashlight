@@ -4,7 +4,14 @@ angular.module('app')
 	$scope.FLICKR = FLICKR;
 
 	angular.element($window).bind('resize', function(){
-		
+		var selector = '.searchResults .imageMetaData > div.content flickr-meta-data .info';
+		if ($window.innerWidth < 1121) {
+			var imgHeight = $('.searchResults .imageMetaData > div.content flickr-meta-data .figure > img').outerHeight();
+			angular.element(selector).css({"margin-top":imgHeight+14});
+			
+		} else {
+			angular.element(selector).css({"margin-top":0});
+		}
 		$scope.$digest();
 	});
 }])
