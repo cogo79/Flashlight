@@ -1,3 +1,5 @@
+ng-resource is not used so far.
+
 /Users/yhc3l/Desktop/Github/Flashlight,-/Users/yhc3l/Desktop/Github/Flashlight/node_modules/*,-/Users/yhc3l/Desktop/Github/Flashlight/public/vendor/*,-/Users/yhc3l/Desktop/Github/Flashlight/public/css/bootstrap.css
 
 https://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=14f9088eec0f71b0bebc5e4d919c36e6&text=car&format=json&per_page=5

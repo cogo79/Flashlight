@@ -5,7 +5,7 @@ angular.module('app')
 
 	$scope.gotoPhotoSite = function() {
 		if ($scope.$parent.clickedImage.additionalMetaData.siteURL) {
-			$window.location.href = $scope.$parent.clickedImage.additionalMetaData.siteURL;
+			$window.open($scope.$parent.clickedImage.additionalMetaData.siteURL);
 		}
 	};
 
