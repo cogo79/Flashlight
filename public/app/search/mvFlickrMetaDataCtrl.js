@@ -3,6 +3,12 @@ angular.module('app')
 	
 	$scope.FLICKR = FLICKR;
 
+	$scope.gotoPhotoSite = function() {
+		if ($scope.$parent.clickedImage.additionalMetaData.siteURL) {
+			$window.location.href = $scope.$parent.clickedImage.additionalMetaData.siteURL;
+		}
+	};
+
 	angular.element($window).bind('resize', function(){
 		var selector = '.searchResults .imageMetaData > div.content flickr-meta-data .info';
 		if ($window.innerWidth < 1121) {

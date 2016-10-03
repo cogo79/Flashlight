@@ -7,19 +7,30 @@ angular.module('app').controller('mvSearchResultsCtrl', ['$scope', 'mvSearchCoor
 	var clickedImageSelector;
 	$scope.showMetaDataForImage = function(image, pageIndex, imageIndex) {
 
+		$scope.clickedImage = image;
+
 		var newSelector = '.searchResults .pageIndex'+pageIndex+' .imageIndex'+imageIndex+'.fetchedImage';
 
 		if (clickedImageSelector && clickedImageSelector === newSelector) {
 			noImageClicked();
 		} else {
+			console.log($scope.clickedImage);
+			if (!$scope.clickedImage.additionalMetaData) {
+				var promise = mvSearchCoordinator.getAdditionalMetaData($scope.clickedImage);
+				if (promise) {
+					promise.then(function(result) {
+						$scope.clickedImage.additionalMetaData = result;
+					}, function errorFetchingAdditionalMetaDataForImage(response) {
+						console.log(response);
+					});
+				}
+			}
 
 			clickedImageSelector = newSelector;
 
 			$('image-meta-data').insertAfter(clickedImageSelector);
 
 			var $element = $(clickedImageSelector);
-
-			$scope.clickedImage = image;
 			
 			adjustImagePointer();
 

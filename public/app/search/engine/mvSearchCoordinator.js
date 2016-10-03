@@ -32,6 +32,11 @@ angular.module('app').factory('mvSearchCoordinator', ['mvSearchFlickr', 'mvEvent
 
 				})
 			}
+		},
+		getAdditionalMetaData: function(image) {
+			if (image.from.FLICKR = FLICKR) {
+				return mvSearchFlickr.getInfo(image.meta.id);
+			}
 		}
 	};
 }]);

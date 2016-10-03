@@ -6,3 +6,5 @@ jsonFlickrApi({"photos":{"page":1,"pages":101005,"perpage":5,"total":"505021","p
 
 second from response above:
 https://c7.staticflickr.com/9/8034/29212633074_ff44d6a401_n.jpg
+
+https://api.flickr.com/services/rest/?method=flickr.photos.getInfo&api_key=14f9088eec0f71b0bebc5e4d919c36e6&format=json&photo_id=29726788742
