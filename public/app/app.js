@@ -1,5 +1,5 @@
 
-angular.module('app', ['ngResource', 'ngRoute']);
+angular.module('app', ['ngRoute']);
 
 angular.module('app').config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
 

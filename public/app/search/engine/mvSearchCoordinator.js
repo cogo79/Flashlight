@@ -18,7 +18,6 @@ angular.module('app').factory('mvSearchCoordinator', ['mvSearchFlickr', 'mvEvent
 			return pages;
 		},
 		nextPage: function() {
-			console.log("nextPage()");
 			if (_searchString) {
 				mvSearchFlickr.nextPage().then(function(results) {
 					

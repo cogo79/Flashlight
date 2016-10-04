@@ -14,7 +14,6 @@ angular.module('app').controller('mvSearchResultsCtrl', ['$scope', 'mvSearchCoor
 		if (clickedImageSelector && clickedImageSelector === newSelector) {
 			noImageClicked();
 		} else {
-			console.log($scope.clickedImage);
 			if (!$scope.clickedImage.additionalMetaData) {
 				var promise = mvSearchCoordinator.getAdditionalMetaData($scope.clickedImage);
 				if (promise) {

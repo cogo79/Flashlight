@@ -23,7 +23,6 @@
     "jquery": "^2.2.3",
     "toastr": "^2.1.2",
     "angular": "^1.5.4",
-    "angular-resource": "^1.5.3",
     "angular-route": "^1.5.3",
     "normalize-css": "^4.2.0"
   },
