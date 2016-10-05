@@ -20,7 +20,6 @@ angular.module('app').controller('mvSearchResultsCtrl', ['$scope', 'mvSearchCoor
 					promise.then(function(result) {
 						$scope.clickedImage.additionalMetaData = result;
 						mvEvents.fetchedAdditionalMetaDataFromFlickr(result);
-						//$scope.$digest();
 					}, function errorFetchingAdditionalMetaDataForImage(response) {
 						console.log(response);
 					});
@@ -34,8 +33,6 @@ angular.module('app').controller('mvSearchResultsCtrl', ['$scope', 'mvSearchCoor
 			var $element = $(clickedImageSelector);
 			
 			adjustImagePointer();
-
-			//$parent.clickedImage.from
 		}
 	};
 	angular.element($window).bind('resize', function(){
