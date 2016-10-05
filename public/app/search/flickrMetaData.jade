@@ -2,5 +2,12 @@
 div.figure
 	img(ng-src="{{$parent.clickedImage.urlFullSize}}" ng-click="gotoPhotoSite();")
 .info
-	h3 Ninja turtles baby!!
-	p Yeah cowabunga dude hahahahahaha
+	h3 Flickr
+	h3 {{$parent.clickedImage.title}}
+	p(ng-bind="_content")
+	p Owner:  
+		span(ng-bind="realname")
+		span(ng-if="!realname")  unknown
+	p Location:  
+		span(ng-bind="location")
+		span(ng-if="!location")  unknown

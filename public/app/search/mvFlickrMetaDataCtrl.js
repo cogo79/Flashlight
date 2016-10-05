@@ -9,6 +9,12 @@ angular.module('app')
 		}
 	};
 
+	$scope.$on(FETCHED_ADDITIONAL_META_DATA_FROM_FLICKR_EVENT, function(event, additionalMetaData) {
+		$scope._content = additionalMetaData.photo.description._content;
+		$scope.realname = additionalMetaData.photo.owner.realname;
+		$scope.location = additionalMetaData.photo.owner.location;
+	});
+
 	angular.element($window).bind('resize', function(){
 		var selector = '.searchResults .imageMetaData > div.content flickr-meta-data .info';
 		if ($window.innerWidth < 1121) {

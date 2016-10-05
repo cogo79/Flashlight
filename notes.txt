@@ -1,4 +1,3 @@
-ng-resource is not used so far.
 
 /Users/yhc3l/Desktop/Github/Flashlight,-/Users/yhc3l/Desktop/Github/Flashlight/node_modules/*,-/Users/yhc3l/Desktop/Github/Flashlight/public/vendor/*,-/Users/yhc3l/Desktop/Github/Flashlight/public/css/bootstrap.css
 

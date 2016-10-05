@@ -3,7 +3,6 @@ angular.module('app')
 	
 	$scope.search = function() {
 		if ($scope.searchText) {
-			console.log($scope.searchText);
 			mvSearchCoordinator.newSearch($scope.searchText);
 			$('search-field center > .container > input').blur();
 		}

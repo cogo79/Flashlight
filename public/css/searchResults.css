@@ -50,7 +50,6 @@
 .searchResults .imageMetaData > div.content flickr-meta-data .figure {
   margin: 0px;
   position: absolute;
-  background-color: #f00;
   width: 700px;
   max-height: 406px;
   padding: 7px;
@@ -69,7 +68,6 @@
   cursor: pointer;
 }
 .searchResults .imageMetaData > div.content flickr-meta-data .info {
-  background-color: #ff0;
   width: -moz-calc(100% - 725px);
   width: -webkit-calc(100% - 725px);
   width: calc(100% - 725px);

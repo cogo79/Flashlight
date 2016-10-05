@@ -1,4 +1,4 @@
-angular.module('app').controller('mvSearchResultsCtrl', ['$scope', 'mvSearchCoordinator', '$window', function($scope, mvSearchCoordinator, $window) {
+angular.module('app').controller('mvSearchResultsCtrl', ['$scope', 'mvSearchCoordinator', '$window', 'mvEvents', function($scope, mvSearchCoordinator, $window, mvEvents) {
 
 	$scope.pages = function() {
 		return mvSearchCoordinator.searchResults();	
@@ -19,6 +19,8 @@ angular.module('app').controller('mvSearchResultsCtrl', ['$scope', 'mvSearchCoor
 				if (promise) {
 					promise.then(function(result) {
 						$scope.clickedImage.additionalMetaData = result;
+						mvEvents.fetchedAdditionalMetaDataFromFlickr(result);
+						//$scope.$digest();
 					}, function errorFetchingAdditionalMetaDataForImage(response) {
 						console.log(response);
 					});
