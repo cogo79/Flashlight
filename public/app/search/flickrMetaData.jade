@@ -3,7 +3,7 @@ div.figure
 	img(ng-src="{{$parent.clickedImage.urlFullSize}}" ng-click="gotoPhotoSite();")
 .info
 	h3 Flickr
-	h3 {{$parent.clickedImage.title}}
+	h3(ng-show="$parent.clickedImage.meta.title.length < 200") {{$parent.clickedImage.meta.title}}
 	p(ng-bind="_content")
 	p Owner:  
 		span(ng-bind="realname")
