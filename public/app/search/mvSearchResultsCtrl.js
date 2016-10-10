@@ -33,6 +33,8 @@ angular.module('app').controller('mvSearchResultsCtrl', ['$scope', 'mvSearchCoor
 			var $element = $(clickedImageSelector);
 			
 			adjustImagePointer();
+
+			mvEvents.showImageMetaData();
 		}
 	};
 	angular.element($window).bind('resize', function(){

@@ -16,6 +16,16 @@ angular.module('app')
 	});
 
 	angular.element($window).bind('resize', function(){
+		adjustLayout();
+	});
+
+	$scope.$on(SHOW_IMAGE_META_DATA_EVENT, function(event) {
+		$window.setTimeout(function() {
+			adjustLayout();
+		}, 1000);
+	});
+
+	function adjustLayout() {
 		var selector = '.searchResults .imageMetaData > div.content flickr-meta-data .info';
 		if ($window.innerWidth < 1121) {
 			var imgHeight = $('.searchResults .imageMetaData > div.content flickr-meta-data .figure > img').outerHeight();
@@ -25,7 +35,7 @@ angular.module('app')
 			angular.element(selector).css({"margin-top":0});
 		}
 		$scope.$digest();
-	});
+	}
 }])
 .directive('flickrMetaData', function() {
 	return {
